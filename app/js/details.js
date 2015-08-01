@@ -1,7 +1,7 @@
 (function () {
     var currentBook;
     window.BookDetail = {
-        show: function() {
+    show: function() {
         //Pull the ISBN number from the query string
         var location = window.location.toString();
         var isbn = location.substring(location.lastIndexOf('?')+4);
@@ -10,6 +10,18 @@
         window.Books.data.filter({ field: "isbn", operator: "eq", value: isbn });
         currentBook = window.Books.data.view()[0];
         
+        // Create a model for the page and bind it to the view
+        var book = {
+          title: currentBook.name + " by " + currentBook.author,
+          image_url: currentBook.image_url,
+          amazon_url: currentBook.amazon_url,
+          is_favorite: currentBook.is_favorite
+        };
+        kendo.bind($('#bookContent'), book, kendo.mobile.ui);
+        // If the current book is a favorited item, toggle the switch on the view
+        if (currentBook.is_favorite) {
+          $('#favorite').data('kendoMobileSwitch').toggle();
+        }
     },
     hide: function() {
         // When the user navigates away from the page, remove the filter
