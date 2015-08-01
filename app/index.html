@@ -15,12 +15,7 @@
     <script src="js/favorites.js"></script>
 </head>
 <body>
-    <div data-role="view" id="index">
-        <div data-role="header">
-            <div data-role="navbar">
-                <span data-role="view-title"></span>
-            </div>
-        </div>
+    <div data-role="view" id="index" data-title="Books">
         <ul data-role="listview" data-source="Books.data" data-template="books-template"></ul>
     </div>
 
@@ -33,6 +28,36 @@
     </script>
 
     <!-- Add Tutorial Markup Here -->
+	<div data-role="layout" data-id="main-layout" data-title="TBooks">
+        <div data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+                <a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>
+            </div>
+        </div>
+        
+        <div data-role="footer">
+            <div data-role="tabstrip">
+                <a href="#index" data-icon="home">Home</a>
+                <a href="views/favorites.html" data-icon="favorites">Favorites</a>
+                <a href="views/about.html" data-icon="globe">About</a>
+            </div>
+        </div>
+		
+    </div>
+    
+    <div data-role="drawer" id="app-drawer">
+      <div data-role="header">
+          <div data-role="navbar">
+              <span data-role="view-title">Menu</span>
+          </div>
+      </div>
 
+      <ul data-role="listview">
+          <li><a href="#index" data-icon="home">Home</a></li>
+          <li><a href="views/favorites.html" data-icon="favorites">Favorites</a></li>
+          <li><a href="views/about.html" data-icon="globe">About</a></li>
+      </ul>
+    </div>
 </body>
 </html>
