@@ -13,8 +13,12 @@
     <script src="scripts/app.js"></script>
 </head>
 <body>
-    <div data-role="view">
-
+    <div data-role="view" data-model="listview" data-title="My Photos">
+		<div data-role="navbar">
+        	<span data-role="view-title"></span>
+        </div>
+        <button data-role="button" data-align="right" data-bind="click: addImage">Add</button>
+        <ul id="images"></ul>
     </div>
 </body>
 </html>
