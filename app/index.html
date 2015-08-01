@@ -28,14 +28,15 @@
     </script>
 
     <!-- Add Tutorial Markup Here -->
-	<div data-role="layout" data-id="main-layout" data-title="TBooks">
+	<div data-role="layout" data-id="main-layout">
         <div data-role="header">
             <div data-role="navbar">
-                <span data-role="view-title"></span>
                 <a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>
+                <span data-role="view-title"></span>
+                <a data-click="Books.settings" data-role="button" data-align="right" data-icon="settings"></a>
             </div>
         </div>
-        
+        <!--
         <div data-role="footer">
             <div data-role="tabstrip">
                 <a href="#index" data-icon="home">Home</a>
@@ -43,7 +44,7 @@
                 <a href="views/about.html" data-icon="globe">About</a>
             </div>
         </div>
-		
+		-->
     </div>
     
     <div data-role="drawer" id="app-drawer">
